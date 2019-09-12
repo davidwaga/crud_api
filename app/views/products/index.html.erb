@@ -9,10 +9,11 @@
         <th>Name</th>
         <th>Price</th>
         <th>Quantity</th>
-        <th>Total</th>
         <th>Description</th>
-        <th>Last Modified</th>
-        <th>Date Added</th>
+        <th>Total</th>
+        
+        <%# <th>Last Modified</th>
+        <th>Date Added</th> %>
         <th>Actions</th>
       </tr>
       </thead>
@@ -34,10 +35,11 @@
             <td><%= product.name %></td>
             <td><%= number_to_currency(product.price) %></td>
             <td><%= product.quantity %></td>
-            <td><%= number_to_currency(product.price * product.quantity )%></td>
             <td><%= truncate(product.description, :length => 75) %></td>
-            <td><%= product.updated_at %></td>
-            <td><%= product.created_at %></td>
+            <td><%= number_to_currency(product.price * product.quantity )%></td>
+            
+            <!--<td><%= product.updated_at %></td>
+            <td><%= product.created_at %></td>-->
             <td>
               <div class="btn-group">
                 <%= link_to 'Show', product_path(product), class: 'btn btn-primary' %>
