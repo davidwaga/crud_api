@@ -3,21 +3,19 @@ Rails.application.routes.draw do
   resources :products
   #root to: 'welcome#index'
   root 'products#index'
-  get 'products/index'
-  get 'products/show'
-  get 'products/new'
-  get 'products/create'
-  get 'products/edit'
-  get 'products/update'
-  get 'products/destroy'
+  # get 'products/index'
+  # get 'products/show'
+  # get 'products/new'
+  # get 'products/create'
+  # get 'products/edit'
+  # get 'products/update'
+  # get 'products/destroy'
 
-  #mount API => '/api/products'
 
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do
-      resources :products
+      resources :products,only: [:index, :create, :show,:update,:edit]
     end
   end
-  #mount Products::ProductsAPI => '/api/products'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
